@@ -112,6 +112,15 @@ def demonstrate_copying():
 
     deep_hero = deepcopy(original)
 
+    """
+    The difference between a shallow and deep copy is that, while a shallow copy creates a new object in memory,
+    it still keeps references to the original data source; meaning that if one were to modify the objects via the 
+    shallow copy, they would persist to the original copy as well. However, one can still add/modify the new data
+    structure/object itself with no issue. A deep copy creates a new object AND creates new objects in memory for 
+    every original object that there was. Meaning that changes to the new deep copy will not affect the original
+    object created.
+    """
+
     print("Before modifying original inventory:")
     print(f"Original Inventory:     {original.inventory}")
     print(f"Shallow Copy Inventory: {shallow_hero.inventory}")
