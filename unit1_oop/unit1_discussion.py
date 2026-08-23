@@ -54,7 +54,11 @@ class SwordsMan(VideoGameCharacter):
         super().__init__(name, age)
         self.sword_name = sword_name
         self.stamina = stamina
-        self.inventory = inventory if inventory is not None else []
+        if inventory is None:
+            self.inventory = []
+        else:
+            self.inventory = inventory
+
 
     def attack(self):
         print(f"{self.name} attacks with their {self.sword_name}!")
@@ -80,8 +84,8 @@ def demonstrate_namespaces():
     swordsman1 = SwordsMan("Cloud Strife", 21, "Buster Sword", 100)
     swordsman2 = SwordsMan("King Arthur", 25, "Excalibur", 75)
 
-    print(f"Class variable via class (SwordsMan.WEAPON_TYPE): {SwordsMan.WEAPON_TYPE}")
-    print(f"Class variable via instance (swordsman1.WEAPON_TYPE): {swordsman1.WEAPON_TYPE}")
+    print(f"Via class: {SwordsMan.WEAPON_TYPE}")
+    print(f"Via instance: {swordsman1.WEAPON_TYPE}")
 
     swordsman1.shield = "Iron Shield"
     print(f"\nAdded 'shield' attribute to swordsman1: {swordsman1.shield}")

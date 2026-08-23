@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/unit1_oop.iml" filepath="$PROJECT_DIR$/.idea/unit1_oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cmsc315-discussions.iml" filepath="$PROJECT_DIR$/.idea/cmsc315-discussions.iml" />
     </modules>
   </component>
 </project>
