@@ -101,20 +101,20 @@ def main():
 
     print("\n=== INSERTION TESTS ===")
 
-    # initial creation of list with some values (or in this case movies)
-    movies = ["Good Will Hunting", "Lord of the Rings: The Return of the King", "Terminator 2: Judgement Day"]
+    # initial creation of list with some values (or in this case favorite movies)
+    favorite_movies = ["Good Will Hunting", "Lord of the Rings: The Return of the King", "Terminator 2: Judgement Day"]
     
     # iterate through each movie, printing each movie
-    for movie in movies:
+    for movie in favorite_movies:
         print(movie)
 
-    # insert three movies, one at the beginning, one in the middle, and one at the end. 
-    insert_at(movies, 0, "The Odyssey")
-    print("Inserting at the beginning: ", movies) # print list after insert at the beginning
-    insert_at(movies, (len(movies) // 2), "La La Land")
-    print("Inserting at the middle: ", movies) # print list after insert at the middle
-    insert_at(movies, (len(movies)), "Inception")
-    print("Inserting at the end: ", movies) # print list after insert at the end
+    # insert three favorite_movies, one at the beginning, one in the middle, and one at the end. 
+    insert_at(favorite_movies, 0, "The Odyssey")
+    print("Inserting at the beginning: ", favorite_movies) # print list after insert at the beginning
+    insert_at(favorite_movies, (len(favorite_movies) // 2), "La La Land")
+    print("Inserting at the middle: ", favorite_movies) # print list after insert at the middle
+    insert_at(favorite_movies, (len(favorite_movies)), "Inception")
+    print("Inserting at the end: ", favorite_movies) # print list after insert at the end
 
     # ===============================
     # TODO (Student): DELETION TESTS
@@ -131,12 +131,12 @@ def main():
 
     print("\n=== DELETION TESTS ===")
 
-    movie_one = delete_at(movies, 0) # delete and save value of deleted movie
-    print(f"Watched movie from beginning of the list: {movie_one}. Movie list now: {movies}") # print deleted movie then the movie list after deleting the beginning movie
-    movie_two = delete_at(movies, (len(movies) // 2)) # delete and save value of deleted movie
-    print(f"Watched movie from the middle of the list: {movie_two}. Movie list now: {movies}") # print deleted movie then the movie list after deleting the middle movie of the list
-    movie_three = delete_at(movies, (len(movies)-1)) # delete and save value of deleted movie
-    print(f"Watched movie from the end of the list: {movie_three}. Movie list now: {movies}") # print deleted movie then the movie list after deleting the last movie in the list
+    movie_one = delete_at(favorite_movies, 0) # delete and save value of deleted movie
+    print(f"Watched movie from beginning of the list: {movie_one}. Movie list now: {favorite_movies}") # print deleted movie then the movie list after deleting the beginning movie
+    movie_two = delete_at(favorite_movies, (len(favorite_movies) // 2)) # delete and save value of deleted movie
+    print(f"Watched movie from the middle of the list: {movie_two}. Movie list now: {favorite_movies}") # print deleted movie then the movie list after deleting the middle movie of the list
+    movie_three = delete_at(favorite_movies, (len(favorite_movies)-1)) # delete and save value of deleted movie
+    print(f"Watched movie from the end of the list: {movie_three}. Movie list now: {favorite_movies}") # print deleted movie then the movie list after deleting the last movie in the list
 
 
     # ===============================
@@ -151,10 +151,10 @@ def main():
 
     print("\n=== SEARCH TESTS ===")
 
-    real_movie_index = search_value(movies, "Good Will Hunting") # searches and retrieves of the index 
+    real_movie_index = search_value(favorite_movies, "Good Will Hunting") # searches and retrieves of the index 
     # of the movie/value specified, which in this case does exist
     print(f"Searched for the movie 'Good Will Hunting'. Found at index: {real_movie_index}") # print the index the movie was found at
-    non_existent_movie_index = search_value(movies, "The Godfather Part VIII") # not only is this movie not in the movie list.
+    non_existent_movie_index = search_value(favorite_movies, "The Godfather Part VIII") # not only is this movie not in the movie list.
     # This movie doesn't exist. Thus, by the logic of the function it will return 
     # the value -1 in order to signal that an invalid input has been given for this list
     print(f"Searched for the movie 'The Godfather Part VIII'. Not found and returned value: {non_existent_movie_index} signaling an erroneous search")
@@ -176,9 +176,9 @@ def main():
     print("\n=== EDGE CASES ===")
 
     invalid_index = 10000000
-    invalid_del = delete_at(movies, invalid_index) # there are obviously not 10000000 movies in the movie list, so this will trigger the edge case
+    invalid_del = delete_at(favorite_movies, invalid_index) # there are obviously not 10000000 favorite_movies in the movie list, so this will trigger the edge case
     # in which the function will return None
-    print(f"Tried to delete from index {invalid_index}, which is far greater than the length of the list: {len(movies)} and thus returned the value {invalid_del}. This value was returned in case of an invalid index.")
+    print(f"Tried to delete from index {invalid_index}, which is far greater than the length of the list: {len(favorite_movies)} and thus returned the value {invalid_del}. This value was returned in case of an invalid index.")
     # displays the invalid index, why it is invalid, and what it returned
     empty_lst = []
     empty_del = delete_at(empty_lst, 5)
