@@ -93,7 +93,7 @@ def main():
     before_value = user_id_and_names.get(1003) # get before val
     print(f"Name and dict before update - Name: {before_value}, Dictionary: {user_id_and_names}") # print before 
     user_id_and_names[1003] = "Benjamin" # update value for existing key
-    after_value = user_id_and_names.get(1003) # get before val
+    after_value = user_id_and_names.get(1003) # get after val
     print(f"Name after update - Name: {after_value}, Dictionary: {user_id_and_names}") # print after
 
     print("\n=== DELETE OPERATIONS ===")
@@ -140,9 +140,10 @@ def main():
     try:
         empty_dict["Cool key"] # fake key name 
     except KeyError as error:
-        print(f"Cannot access a key from an empty dictionary, since its non existent. Raised error {error}") # message printed when error is run into
+        print(f"Cannot access a nonexistent key. Raised error {error}") # message printed when error is run into
 
-    # using pop with the None parameter will safeguard against empty/invalid keys
+    # using pop with the default parameter returns that default in case of an empty key instead of a KeyError
+    # and leaves the dictionary unchanged
     result = user_id_and_names.pop("Non-existent key", None) # use pop with fake key and None to safely check/delete and prevent
     print(f"Safe delete of missing key returned: {result}.") # erroneous behavior if key doesnt exist
 
